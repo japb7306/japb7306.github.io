@@ -1,0 +1,24 @@
+@url= https://jsonplaceholder.typicode.com
+@urlNetSuiteInvoice = https://5836590.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=1585&deploy=1
+
+@id = {{respuesta.response.body.$.userId}}
+
+GET {{url}}/posts/5
+
+###
+# @name respuesta
+POST {{url}}/posts
+Content-Type: application/json
+
+{
+    "title": "test 2",
+    "body": "JAPB",
+    "userId": 9
+}
+
+###
+GEt {{url}}/posts/{{id}}
+
+###
+PUT {{urlNetSuiteInvoice}}
+Content-Type: application/json
